@@ -1,6 +1,5 @@
 """
-
-
+higher lower game
 """
 
 #import data 
@@ -26,7 +25,7 @@ def compare_choice(data, pick_one, score):
     pick_two = random.sample(data, k=1)[0]
     print(f"Compare A: {pick_one["name"]}, {pick_one["description"]}, from {pick_one["country"]}.")
     print(higher_lower_art.VS)
-    print(f"Compare B: {pick_two["name"]}, {pick_two["description"]}, from {pick_two["country"]}.")
+    print(f"Against B: {pick_two["name"]}, {pick_two["description"]}, from {pick_two["country"]}.")
     choice = input("Who has more followers? Type 'A' or 'B': ").upper()
     if choice == "A" and (pick_one["follower_count"] > pick_two["follower_count"]):
             return {"win_value": pick_one, "new_score": update_score(score), "game_end": False}
@@ -44,6 +43,9 @@ def higher_lower():
     end_of_game = False
 
     while not end_of_game:
+        if len(data) == 0:
+             print(f"GAME OVER! Final score: {score}")
+             return
         result = compare_choice(data=data, pick_one=first_pick, score=score)
         if result["game_end"]  == False:
             score = result["new_score"]
