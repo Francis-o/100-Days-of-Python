@@ -21,7 +21,7 @@ class Snake():
 
     
     def add_segment(self, position):
-        new_turtle = Turtle(shape="turtle")
+        new_turtle = Turtle(shape="circle")
         # new_turtle.speed("fastest")
         new_turtle.penup()
         new_turtle.fillcolor("white")
