@@ -53,6 +53,7 @@ def count_down(count):
     else:
         start_timer()
         if reps % 2 == 0:
+
             checkmark_label.config(text="✔" * (reps//2))
 
 # ---------------------------- UI SETUP ------------------------------- #
