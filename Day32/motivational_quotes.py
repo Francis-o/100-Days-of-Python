@@ -18,6 +18,7 @@ if day == 0:
 
     with open("quotes.txt", "r") as quotes_file:
         quotes =  quotes_file.readlines()
+        
 
     with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()
